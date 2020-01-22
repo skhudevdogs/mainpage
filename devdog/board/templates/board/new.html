@@ -1,0 +1,10 @@
+{% extends 'board/base.html' %}
+{% block content %}
+    <form action="{% url 'board:create' %}">
+        <h4>제목:</h4>
+        <input type="text" name="title">
+        <h4>본문:</h4>
+        <textarea cols="40" rows="10" name="content"></textarea>
+        <input type="submit" value="제출하기">
+    </form>
+{% endblock %}
