@@ -37,9 +37,9 @@
       </div>
 
       <div class="intro2">
+        <a href="{% url 'board:create' %}" >글쓰기</a>
         <div class="content">
           <h1 class="contentTitle">공지사항</h1>
-          <a href="{% url 'board:new' %}">글쓰기</a>
           <div class="noticeBoard">
             <ul>
               {% for article in articles.all %}
@@ -50,16 +50,9 @@
 
           <div class="pageNum">
             <span><a href="#"><</a></span>
+            
             <a href="#" style="color:rgb(285,165,122); font-weight:bold;">1</a>
             <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
-            <a href="#">8</a>
-            <a href="#">9</a>
-            <a href="#">10</a>
             <span><a href="#">></a></span>
           </div>
         </div>

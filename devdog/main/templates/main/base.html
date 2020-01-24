@@ -24,19 +24,28 @@
       <h1><a href="../main/Main.html">개발자들</a></h1>
       <div class="bannerMenu">
         <ul class="menu">
-          <li><a href="{% url 'board:boardmain' %}"><b>공지</b></a></li>
+          <li><a href="{% url 'board:read' %}"><b>공지</b></a></li>
           <li><a href="#"><b>소개</b></a></li>
           <li><a href="#"><b>QnA</b></a></li>
           <li><a href="#"><b>Slack</b></a></li>
         </ul>
       </div>
-
+      {% if user.is_authenticated %}
       <div class="sign">
         <ul class="signMenu">
-          <li><a target="_blank" href="../signin/sign_in.html"><b>로그인</b></a></li>
-          <li><a target="_blank" href="../signup/sign_up.html"><b>가입하기</b></a></li>
+          <li><a target="_blank"><b>환영합니다 {{user.username}}</b></a></li>
+          <li><a target="_blank" href="{% url 'user:logout' %}"><b>logout</b></a></li>
+
         </ul>
       </div>
+      {% else %}
+      <div class="sign">
+        <ul class="signMenu">
+          <li><a target="_blank" href="{% url 'user:signin' %}"><b>로그인</b></a></li>
+          <li><a target="_blank" href="{% url 'user:signup' %}"><b>가입하기</b></a></li>
+        </ul>
+      </div>
+      {% endif %}
     </nav>
 </header>
 {% block content %}

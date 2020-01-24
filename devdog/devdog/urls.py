@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/', include('board.urls')),
     path('qna/', include('qna.urls')),
+    path('user/', include('user.urls')),
     path('', views.main, name='main'),
 ]
